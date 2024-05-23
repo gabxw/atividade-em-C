@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <Windows.h>
+int main () {
+	setlocale(LC_ALL, "portuguese");
+	
+	char nome[5];
+	int soma[4];
+	float media[4];
+	int opcao;
+	int nota[4];
+	int cont;
+	int cont1;
+	
+	printf("Carregando o sistema... aguarde \n\n");
+	system("cls");
+	Sleep(500);
+	printf("-------Seja bem vindo!-------\n\n");
+	printf("\n1 - Cadastrar aluno \n");
+	scanf("%d", &opcao);
+	
+	
+
+	switch(opcao){
+		case 1:
+			system("cls");
+			
+			for(cont = 1; cont<=5; cont++ ){
+				printf("Qual o nome do aluno?\n");
+				scanf("%s", &nome[cont]);
+				for(cont1 = 1; cont1<=4; cont1++){
+					printf("Qual a nota do aluno?\n");
+					scanf("%d", &nota[cont1]);
+					printf("O Aluno %s foi cadastrado com a nota %i \n\n",&nome[cont], nota[cont1]);
+					soma[cont] = soma[cont1] + nota[cont1];
+					media[cont] = soma[cont1]/5;
+					printf("%f",media[cont1]);
+				}			
+			}
+
+		break;
+		default:
+			system("cls");
+			printf("Numero inserido errado!");
+		break;
+	}
+				
+
+	return 0;
+}
